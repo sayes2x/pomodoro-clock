@@ -7,7 +7,8 @@ export const Label = styled('h1')`
 export const AdjustTimerContainer = styled('div')`
   display: flex;
   justify-content: space-around;
-  width: 500px;
+  flex-wrap: wrap;
+  max-width: 500px;
   margin: auto;
 `;
 
@@ -19,5 +20,9 @@ export const ControlButton = styled('button')`
   overflow: hidden;
   outline: none;
   color: white;
-  font-size: 40px;
+  font-size: 30px;
+`;
+
+export const ControlText = styled('span')`
+  font-size: 45px;
 `;

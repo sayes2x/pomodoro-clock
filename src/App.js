@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Label } from './emotion/timerStyle';
 import Timer from './components/timer';
+import { Link } from './emotion/appStyle';
 
 class App extends Component {
   render() {
@@ -9,7 +10,9 @@ class App extends Component {
         <Label>Pomodoro Clock</Label>
         <Timer />
         <p>Designed and Coded by</p>
-        <a href="scottaprice.com">Scott A Price</a>
+        <Link href="https://www.scottaprice.com/" target="_blank">
+          Scott A Price
+        </Link>
       </Fragment>
     );
   }

@@ -88,7 +88,7 @@ export default class Timer extends Component {
       timer = this.state.timer,
       breakLength = this.state.breakLength,
       sessionLength = this.state.sessionLength;
-    if (label === 'Break' && breakLength >= 60) {
+    if (label === 'Break' && breakLength >= 120) {
       this.setState({
         breakLength: breakLength - 60
       });
@@ -97,7 +97,7 @@ export default class Timer extends Component {
           timer: timer - 60
         });
       }
-    } else if (label === 'Session' && sessionLength >= 60) {
+    } else if (label === 'Session' && sessionLength >= 120) {
       this.setState({
         sessionLength: sessionLength - 60
       });

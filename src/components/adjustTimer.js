@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { TiPlus, TiMinus } from 'react-icons/ti';
+import { ControlButton, ControlText } from '../emotion/timerStyle';
 
 const AdjustTimer = props => {
   const handlePlus = () => {
@@ -13,10 +14,13 @@ const AdjustTimer = props => {
   return (
     <div>
       <h2>{props.label} Length</h2>
-      <p>
-        <TiPlus onClick={handlePlus} /> {props.time / 60}{' '}
+      <ControlButton>
+        <TiPlus onClick={handlePlus} />
+      </ControlButton>
+      <ControlText>{props.time / 60}</ControlText>
+      <ControlButton>
         <TiMinus onClick={handleMinus} />
-      </p>
+      </ControlButton>
     </div>
   );
 };
