@@ -75,7 +75,7 @@ export default class Timer extends Component {
       this.setState({
         sessionLength: sessionLength + 60
       });
-      if (this.state.session === true) {
+      if (session === true) {
         this.setState({
           timer: timer + 60
         });
@@ -101,7 +101,7 @@ export default class Timer extends Component {
       this.setState({
         sessionLength: sessionLength - 60
       });
-      if (this.state.session === true) {
+      if (session === true) {
         this.setState({
           timer: timer - 60
         });
