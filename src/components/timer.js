@@ -1,11 +1,10 @@
 import React, { Component, Fragment } from 'react';
-// eslint-disable-next-line
-import PropTypes from 'prop-types';
 import Heartbeat from './heartbeat';
 import { AdjustTimerContainer } from '../emotion/timerStyle';
 import AdjustTimer from './adjustTimer';
 import { Clock, TimeLeft, TimerLabel } from '../emotion/clockStyle';
 import Controls from './controls';
+import Alarm from './alarm';
 
 export default class Timer extends Component {
   constructor(props) {
@@ -15,18 +14,21 @@ export default class Timer extends Component {
       timer: 1500,
       session: true,
       sessionLength: 1500,
-      breakLength: 300
+      breakLength: 300,
+      alarm: false
     };
   }
 
   countdown = () => {
-    const timer = this.state.timer;
+    this.setAlarm();
+    const timer = this.state.timer,
+      session = this.state.session;
     if (timer > 0) {
       this.setState({
-        timer: this.state.timer - 1
+        timer: timer - 1
       });
     } else {
-      if (this.state.session === true) {
+      if (session === true) {
         this.setState({
           timer: this.state.breakLength
         });
@@ -36,8 +38,30 @@ export default class Timer extends Component {
         });
       }
       this.setState({
-        session: !this.state.session
+        session: !session
       });
+    }
+  };
+
+  setAlarm = () => {
+    const timer = this.state.timer,
+      session = this.state.session;
+    if (timer === 0) {
+      this.setState({
+        alarm: true
+      });
+    } else if (session === true) {
+      if (this.state.sessionLength - timer > 3) {
+        this.setState({
+          alarm: false
+        });
+      }
+    } else if (session === false) {
+      if (this.state.breakLength - timer > 3) {
+        this.setState({
+          alarm: false
+        });
+      }
     }
   };
 
@@ -117,8 +141,12 @@ export default class Timer extends Component {
         <Heartbeat heartbeatFunction={this.countdown} />
       );
     const timerLabel = this.state.session ? 'Session' : 'Break';
+    const alarm = this.state.alarm ? (
+      <Alarm session={this.state.session} />
+    ) : null;
     return (
       <Fragment>
+        {alarm}
         <AdjustTimerContainer>
           <AdjustTimer
             handlePlus={this.handlePlus}

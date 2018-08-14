@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { TiPlus, TiMinus } from 'react-icons/ti';
 import { ControlButton, ControlText } from '../emotion/timerStyle';
 
