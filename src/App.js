@@ -13,6 +13,12 @@ class App extends Component {
         <Link href="https://www.scottaprice.com/" target="_blank">
           Scott A Price
         </Link>
+        <p>
+          Sound effects obtained from{' '}
+          <Link href="https://www.zapsplat.com" target="_blank">
+            https://www.zapsplat.com
+          </Link>
+        </p>
       </Fragment>
     );
   }

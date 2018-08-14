@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { TiPlus, TiMinus } from 'react-icons/ti';
 import { ControlButton, ControlText } from '../emotion/timerStyle';
 
@@ -23,6 +24,13 @@ const AdjustTimer = props => {
       </ControlButton>
     </div>
   );
+};
+
+AdjustTimer.propTypes = {
+  handlePlus: PropTypes.func,
+  handleMinus: PropTypes.func,
+  label: PropTypes.string,
+  time: PropTypes.number
 };
 
 export default AdjustTimer;

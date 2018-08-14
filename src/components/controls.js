@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 import { TiMediaPlay, TiMediaPause, TiArrowSync } from 'react-icons/ti';
 import { ControlButton } from '../emotion/timerStyle';
 
@@ -26,6 +27,12 @@ const Controls = props => {
       )}
     </Fragment>
   );
+};
+
+Controls.propTypes = {
+  paused: PropTypes.bool,
+  handlePause: PropTypes.func,
+  handleReset: PropTypes.func
 };
 
 export default Controls;
