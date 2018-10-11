@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <Label>Pomodoro Clock</Label>
+        <Label>Pomodoro Timer</Label>
         <Timer />
         <p>Designed and Coded by</p>
         <Link href="https://www.scottaprice.com/" target="_blank">
