@@ -19,7 +19,7 @@ export const ControlButton = styled('button')`
   cursor: pointer;
   overflow: hidden;
   outline: none;
-  color: white;
+  color: #60dafb;
   font-size: 30px;
 `;
 

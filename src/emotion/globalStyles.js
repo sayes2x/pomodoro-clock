@@ -6,8 +6,8 @@ body {
     margin: 0;
     font-family: Montserrat, sans-serif;
     font-weight: bold;
-    background-color: #00a99e;
+    background-color: #282c34;
     text-align: center;
-    color: white;
+    color: #60dafb;
   }
 `;

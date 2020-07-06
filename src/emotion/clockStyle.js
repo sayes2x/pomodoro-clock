@@ -5,7 +5,7 @@ export const Clock = styled('div')`
   padding: 10px;
   width: 200px;
   border-radius: 25px;
-  border: 5px solid white;
+  border: 5px solid #60dafb;
 `;
 
 export const TimeLeft = styled('p')`
